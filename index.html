@@ -281,10 +281,12 @@ document.getElementById('weeknumber').innerHTML = "Kalenderwoche " + today.getWe
 
 {
   //Function E&O
-  function oddOrEven(j) {
-return ( j & 1 ) ?   "ug" : "g"
+  if(j % 2 == 0) {
+    return "g"
+   } else {
+     return "u"
+   }
 }
-
 document.getElementById('result').innerHTML = oddOrEven('weeknumber')
   
 {
