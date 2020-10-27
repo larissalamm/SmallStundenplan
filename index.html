@@ -277,32 +277,30 @@ Date.prototype.getWeekNumber = function(){
   var yearStart = new Date(Date.UTC(today.getUTCFullYear(),0,1));
   return Math.ceil((((today - yearStart) / 86400000) + 1)/7)
 };
-document.getElementById('weeknumber').innerHTML = "Kalenderwoche " + today.getWeekNumber()
+document.getElementById('weeknumber').innerHTML = today.getWeekNumber()
 
 {
-  //Function E&O
-  function oddOrEven(j) {
-  if(j % 2 == 0) {
-    return "g"
-   } else {
-     return "u"
-   }
+
+  function oddOrEven(x) {
+  return ( x & 1 ) ? "u" : "g";
 }
 
-document.getElementById('result').innerHTML = oddOrEven('weeknumber')
-  
+function checkNumber(argNumber) {
+  document.getElementById("result").innerHTML = oddOrEven(argNumber)
+}
+ 
+checkNumber(today.getWeekNumber())
 {
 //Button A-Woche
 var xa = document.getElementById("myDIVA");
 function myFunctionA() {
   if (xa.style.display === "none") {
     xa.style.display = "block"} 
-  else {
-    xa.style.display = "none"}
+ 
 }
   
     function autoClickA(){
-  if (oddOrEven('weeknumber') == "u"){
+  if (oddOrEven(today.getWeekNumber()) == "u"){
     xa.style.display = "none"}
   
   }
@@ -318,7 +316,7 @@ function myFunctionB() {
     xb.style.display = "none"}
 } 
   function autoClickB(){
-  if (oddOrEven('weeknumber') == "g"){
+  if (oddOrEven(today.getWeekNumber()) == "g"){
     xb.style.display = "none" }
   
   
