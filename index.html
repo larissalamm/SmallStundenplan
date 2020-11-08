@@ -293,17 +293,19 @@ checkNumber(today.getWeekNumber())
 {
 //Button A-Woche
 var xa = document.getElementById("myDIVA");
-function myFunctionA() {
-  if (xa.style.display === "none") {
-    xa.style.display = "block"} 
- 
-}
-  
+
     function autoClickA(){
   if (oddOrEven(today.getWeekNumber()) == "u"){
     xa.style.display = "none"}
   
   }
+  function myFunctionA() {
+  if (xa.style.display === "none") {
+    xa.style.display = "block"} 
+ else {
+    xa.style.display = "none"}
+}
+  
 
 }
 {
