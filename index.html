@@ -277,7 +277,7 @@ font-family: 'Roboto', sans-serif;
 var today= new Date();
 Date.prototype.getWeekNumber = function(){
   var dayNum = today.getUTCDay() || 7;
-  today.setUTCDate(today.getUTCDate() + 4 - dayNum);
+  today.setUTCDate(today.getUTCDate() + 3 - dayNum);
   var yearStart = new Date(Date.UTC(today.getUTCFullYear(),0,1));
   return Math.ceil((((today - yearStart) / 86400000) + 1)/7)
 };
